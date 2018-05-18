@@ -2,4 +2,9 @@
 <% @reviews.each do |r| %>
 <p> <%=r.content %></p>
 <p> <%=r.user.name %></p>
+<p> <%=r.user.ratings %></p>
+<%end%>
+<% @ratings.each do |r| %>
+<p> <%=r.rating %></p>
+<p> <%=r.user.name %></p>
 <%end%>
