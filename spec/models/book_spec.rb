@@ -9,4 +9,12 @@ describe Book do
       end
     end
   end
+
+  describe 'relationships' do
+    it 'has many  reviews' do
+      book = Book.new(title: 'book')
+
+      expect(book).to respond_to(:reviews)
+    end
+  end
 end

@@ -1,0 +1,5 @@
+<h3> <%=@book.title %></h3>
+<% @reviews.each do |r| %>
+<p> <%=r.content %></p>
+<p> <%=r.user.name %></p>
+<%end%>
