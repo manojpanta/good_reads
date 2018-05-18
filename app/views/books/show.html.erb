@@ -1,10 +1,16 @@
 <h3> <%=@book.title %></h3>
+
+<h3>Highest Rating: <%=@book.top_rating %></h3>
+<h3>Top Review: <%=@top_review.content %></h3>
+<h3>Top reviewer: <%=@top_review.user.name %></h3>
+
+<h3>Lowest Rating: <%=@book.low_rating %></h3>
+<h3>Low Review: <%=@low_review.content %></h3>
+<h3>Low reviewer: <%=@low_review.user.name %></h3>
+
 <% @reviews.each do |r| %>
 <p> <%=r.content %></p>
 <p> <%=r.user.name %></p>
-<p> <%=r.user.ratings %></p>
+<p> <%=r.rating%></p>
 <%end%>
-<% @ratings.each do |r| %>
-<p> <%=r.rating %></p>
-<p> <%=r.user.name %></p>
-<%end%>
+<p><%=@average_rating%></p>

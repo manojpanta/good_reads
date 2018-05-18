@@ -23,16 +23,15 @@ describe Book do
       user = User.create(name: 'manoj')
       user1 = User.create(name: 'someone')
       user2 = User.create(name: 'someoneelse')
+      user3 = User.create(name: 'someoeelse')
 
-      review = book.reviews.create(user: user, content: 'this is awesome')
-      rating = book.ratings.create(user: user, rating: 3)
-      rating1 = book.ratings.create(user: user1, rating: 4)
-      rating2 = book.ratings.create(user: user2, rating: 5)
+      review = book.reviews.create(rating: 3,user: user, content: 'this is awesome')
+      review1 = book.reviews.create(rating: 3,user: user2, content: 'this is not awesome')
+      review2 = book.reviews.create(rating: 3,user: user3, content: 'this is  okey awesome')
 
-      average_rating = (rating.rating + rating1.rating + rating2.rating)/3
+      average_rating = (review.rating + review1.rating + review2.rating)/3
 
-
-      expect(Book.average_rating).to eq(average_rating)
+      expect(book.average_rating).to eq(average_rating)
     end
   end
 end
